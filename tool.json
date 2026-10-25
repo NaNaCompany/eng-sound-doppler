@@ -1,0 +1,69 @@
+{
+  "id": "E092",
+  "slug": "eng-sound-doppler",
+  "title": "음파 도플러 주파수 계산기",
+  "title_en": "Acoustic Doppler Frequency Calculator",
+  "category": "음향",
+  "category_en": "Acoustics",
+  "fields": [
+    {
+      "key": "freq",
+      "label": "발생 주파수 f₀",
+      "label_en": "Source frequency f₀",
+      "dimension": "frequency",
+      "example": 1000,
+      "constraint": "positive",
+      "display_unit": "Hz",
+      "display_value": "1000"
+    },
+    {
+      "key": "c",
+      "label": "매질 기준 음속 c_s",
+      "label_en": "Sound speed relative to the medium c_s",
+      "dimension": "speed",
+      "example": 340,
+      "constraint": "positive",
+      "display_unit": "ms",
+      "display_value": "340"
+    },
+    {
+      "key": "vo",
+      "label": "음원 쪽 관측자 속도 v_o",
+      "label_en": "Observer velocity toward source v_o",
+      "dimension": "speed",
+      "example": 0,
+      "constraint": "signed",
+      "display_unit": "ms",
+      "display_value": "0"
+    },
+    {
+      "key": "vs",
+      "label": "관측자 쪽 음원 속도 v_s",
+      "label_en": "Source velocity toward observer v_s",
+      "dimension": "speed",
+      "example": 34,
+      "constraint": "signed",
+      "display_unit": "ms",
+      "display_value": "34"
+    }
+  ],
+  "result_label": "관측 주파수 f_obs",
+  "result_label_en": "Observed frequency f_obs",
+  "result_dimension": "frequency",
+  "formula": "f_obs = f₀(c_s+v_o)/(c_s−v_s)",
+  "purpose": "매질 기준 1차원 음원·관측자 운동의 도플러 주파수 계산",
+  "purpose_en": "Calculate classical one-dimensional acoustic Doppler frequency.",
+  "assumptions": "f₀,c_s>0, |v_o|,|v_s|<c_s. 관측자는 음원 쪽, 음원은 관측자 쪽 속도를 양수로 입력한다. 속도는 매질 기준이다. 충격파·반사·전자기 상대론 도플러는 제외한다.",
+  "assumptions_en": "Required: positive f₀,c_s and subsonic speed magnitudes relative to the medium. Observer motion toward the source and source motion toward the observer are positive. Shocks, reflections and relativistic electromagnetic Doppler are excluded.",
+  "sources": [
+    {
+      "label": "OpenStax · 17 7 the doppler effect",
+      "url": "https://openstax.org/books/university-physics-volume-1/pages/17-7-the-doppler-effect"
+    }
+  ],
+  "condition": "",
+  "condition_en": "",
+  "site": "https://nanalab.kr/eng-sound-doppler/",
+  "repository": "https://github.com/NaNaCompany/eng-sound-doppler",
+  "output_unit": "Hz"
+}
